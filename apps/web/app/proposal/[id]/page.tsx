@@ -113,7 +113,7 @@ export default function Page({ params }: { params: { id: string } }) {
 	// return <h1>My Page {params.id}</h1>;
 	// let a= proposal.start_timestamp
 	// const start_time = new Date(a)
-	// console.log(a)
+	console.log(proposal.start_timestamp)
 	return (
 		<>
 			<main className="flex flex-col min-h-screen min-w-full mt-12">
@@ -134,13 +134,12 @@ export default function Page({ params }: { params: { id: string } }) {
 						<p className="leading-7 [&:not(:first-child)]:mt-6 mb-2">
 							{proposal.description}
 						</p>
-						{/*<p className="leading-7 [&:not(:first-child)]:mt-6 mb-2">*/}
-						{/*	{new Date(proposal.start_timestamp).toUTCString()}*/}
-						{/*</p>*/}
-
-						{/*<p className="leading-7 [&:not(:first-child)]:mt-6 mb-2">*/}
-						{/*	{new Date(proposal.start_timestamp).toUTCString()}*/}
-						{/*</p>*/}
+						<p className="leading-7 [&:not(:first-child)]:mt-6 mb-2">
+							{new Date(Number(proposal.start_timestamp)).toUTCString()}
+						</p>
+						<p className="leading-7 [&:not(:first-child)]:mt-6 mb-2">
+							{new Date(Number(proposal.end_timestamp)).toUTCString()}
+						</p>
 					</div>
 
 					<Dialog open={open} onOpenChange={setOpen}>

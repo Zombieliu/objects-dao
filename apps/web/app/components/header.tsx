@@ -6,7 +6,7 @@ import { useWallet } from '@aptos-labs/wallet-adapter-react';
 import React, { useEffect } from 'react';
 
 import {NETWORK, PACKAGE_ID, TREASURE_ADDRESS, TREASURE_OBJECT_ADDRESS} from '../chain/config';
-import { Obelisk, loadMetadata, Types } from '@0xobelisk/aptos-client';
+import { Obelisk, loadMetadata } from '@0xobelisk/aptos-client';
 
 export const Header = () => {
 	const [treasuryBalance, setTreasuryBalance] = React.useState('0');
