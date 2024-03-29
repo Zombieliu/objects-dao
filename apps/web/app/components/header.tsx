@@ -53,7 +53,7 @@ export const Header = () => {
 	}
 
 	const address =
-		'https://explorer.aptoslabs.com/account/0x50f3d59119e56d5a9496759dd86fa58dc8629c4ade3bb6dc3841085f5cc12ba4/coins?network=devnet';
+		`https://explorer.aptoslabs.com/account/${TREASURE_ADDRESS}/coins?network=testnet`;
 
 	return (
 		<div className="flex items-center justify-around bg-zinc-300 py-6">

@@ -19,7 +19,7 @@ import {
 	DialogTitle,
 	DialogTrigger,
 } from '@repo/ui/components/ui/dialog';
-import {NETWORK, PACKAGE_ID, TREASURE_ADDRESS, TREASURE_OBJECT_ADDRESS} from '../chain/config';
+import {NETWORK, OBJECT_ADDRESS, PACKAGE_ID, TREASURE_ADDRESS, TREASURE_OBJECT_ADDRESS} from '../chain/config';
 import { Obelisk, loadMetadata, Types } from '@0xobelisk/aptos-client';
 import { Button } from '@repo/ui/components/ui/button';
 import React, { useState, useEffect } from 'react';
@@ -132,7 +132,7 @@ function Proposal() {
 		const f_payload = (await obelisk.tx.gov.propose(
 			[
 				[
-					'0xa671cca226518df2612bebefb73520d92de8d7dd58c5bedadad21af3df9bf59d',
+					OBJECT_ADDRESS,
 				],
 				proposalTitle,
 				proposalDescription,
@@ -159,7 +159,7 @@ function Proposal() {
 				onClick: () => {
 					const hash = txDetail.hash;
 					window.open(
-						`https://explorer.aptoslabs.com/txn/${hash}?network=devnet`,
+						`https://explorer.aptoslabs.com/txn/${hash}?network=testnet`,
 						'_blank'
 					); // 在新页面中打开链接
 					// router.push(`https://explorer.aptoslabs.com/txn/${tx}?network=devnet`)

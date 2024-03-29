@@ -19,7 +19,7 @@ const inter = Inter({ subsets: ['latin'] });
 const queryClient = new QueryClient();
 
 const client = new GraphQLClient({
-	url: 'https://api.devnet.aptoslabs.com/v1/graphql',
+	url: 'https://api.testnet.aptoslabs.com/v1/graphql',
 });
 
 const WalletContextProvider: FC<{ children: ReactNode }> = ({ children }) => {

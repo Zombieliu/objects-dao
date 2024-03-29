@@ -134,7 +134,7 @@ export const AuctionActivity = () => {
 				onClick: () => {
 					const hash = txDetail.hash;
 					window.open(
-						`https://explorer.aptoslabs.com/txn/${hash}?network=devnet`,
+						`https://explorer.aptoslabs.com/txn/${hash}?network=testnet`,
 						'_blank'
 					); // 在新页面中打开链接
 					// router.push(`https://explorer.aptoslabs.com/txn/${tx}?network=devnet`)
@@ -174,7 +174,7 @@ export const AuctionActivity = () => {
 				onClick: () => {
 					const hash = txDetail.hash;
 					window.open(
-						`https://explorer.aptoslabs.com/txn/${hash}?network=devnet`,
+						`https://explorer.aptoslabs.com/txn/${hash}?network=testnet`,
 						'_blank'
 					); // 在新页面中打开链接
 					// router.push(`https://explorer.aptoslabs.com/txn/${tx}?network=devnet`)
