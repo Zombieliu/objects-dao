@@ -2,23 +2,21 @@
 
 import { useQuery } from 'graphql-hooks';
 import { useWallet } from '@aptos-labs/wallet-adapter-react';
-import { useRouter} from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import React, { useState, useEffect } from 'react';
 
-import { Skeleton } from "@ui/components/ui/skeleton"
+import { Skeleton } from '@ui/components/ui/skeleton';
 
 import { NETWORK, PACKAGE_ID } from '../../chain/config';
 import { Obelisk, loadMetadata, Types } from '@0xobelisk/aptos-client';
-
 
 const files = [
 	{
 		title: 'IMG_4985.HEIC',
 		size: '3.9 MB',
-		source:
-			'https://images.unsplash.com/photo-1582053433976-25c00369fc93?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=512&q=80',
-	}
-	]
+		source: 'https://images.unsplash.com/photo-1582053433976-25c00369fc93?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=512&q=80',
+	},
+];
 
 export default function Page({ params }: { params: { address: string } }) {
 	const router = useRouter();
@@ -59,10 +57,10 @@ export default function Page({ params }: { params: { address: string } }) {
 	} = useQuery(CURRENT_OBJECTS_QUERY);
 	// setObjectAddresses(objectData?.current_objects);
 
-	const check_object = (name) =>{
-		console.log(name)
+	const check_object = name => {
+		console.log(name);
 		// window.open()
-	}
+	};
 
 	useEffect(() => {
 		if (objectData === undefined) return;
@@ -141,26 +139,25 @@ export default function Page({ params }: { params: { address: string } }) {
 	// 	});
 	// }
 
-
-
-
-	console.log(objectData)
+	console.log(objectData);
 	// return <h1>My Page {params.id}</h1>;
 	if (!objectLoading && !connected) {
-		return <>
-			<main className="flex flex-col min-h-screen min-w-full mt-12">
-				<div className="flex items-center justify-center">
-					<div className="w-1/2 h-auto ">
-						<div className="flex flex-col space-y-3">
-							<Skeleton className="h-[94px] w-[134px] rounded-xl" />
-							<div className="space-y-2">
-								<Skeleton className="h-[20px] w-[134px]" />
+		return (
+			<>
+				<main className="flex flex-col min-h-screen min-w-full mt-12">
+					<div className="flex items-center justify-center">
+						<div className="w-1/2 h-auto ">
+							<div className="flex flex-col space-y-3">
+								<Skeleton className="h-[94px] w-[134px] rounded-xl" />
+								<div className="space-y-2">
+									<Skeleton className="h-[20px] w-[134px]" />
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-			</main>
-		</>
+				</main>
+			</>
+		);
 	} else {
 		if (objectData === undefined) {
 			return (
@@ -178,27 +175,48 @@ export default function Page({ params }: { params: { address: string } }) {
 						</div>
 					</main>
 				</>
-			)
+			);
 		} else {
 			return (
 				<>
 					<main className="flex flex-col min-h-screen min-w-full mt-12">
 						<div className="flex items-center justify-center">
 							<div className="w-1/2 h-auto ">
-								<ul role="list" className="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
-									{objectNFTs.map((objectNFT) => (
-										<li key={objectNFT.name} className="relative">
+								<ul
+									role="list"
+									className="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8"
+								>
+									{objectNFTs.map(objectNFT => (
+										<li
+											key={objectNFT.name}
+											className="relative"
+										>
 											<div className="group aspect-h-7 aspect-w-10 block w-full overflow-hidden rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100">
-												<img src={`data:image/svg+xml;base64,${objectNFT.uri}`}
-													 alt="Base64 Image"
-													 // className="h-[320px] w-[320px] rounded-xl"
+												<img
+													src={`data:image/svg+xml;base64,${objectNFT.uri}`}
+													alt="Base64 Image"
+													// className="h-[320px] w-[320px] rounded-xl"
 
-													 className="pointer-events-none object-cover group-hover:opacity-75" />
-												<button type="button" onClick={()=>check_object(objectNFT.name)} className="absolute inset-0 focus:outline-none">
-													<span className="sr-only">View details for {objectNFT.name}</span>
+													className="pointer-events-none object-cover group-hover:opacity-75"
+												/>
+												<button
+													type="button"
+													onClick={() =>
+														check_object(
+															objectNFT.name
+														)
+													}
+													className="absolute inset-0 focus:outline-none"
+												>
+													<span className="sr-only">
+														View details for{' '}
+														{objectNFT.name}
+													</span>
 												</button>
 											</div>
-											<p className="pointer-events-none mt-2 block truncate text-sm font-medium text-gray-900">{objectNFT.name}</p>
+											<p className="pointer-events-none mt-2 block truncate text-sm font-medium text-gray-900">
+												{objectNFT.name}
+											</p>
 										</li>
 									))}
 								</ul>
