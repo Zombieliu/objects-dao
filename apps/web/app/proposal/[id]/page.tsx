@@ -77,20 +77,22 @@ export default function Page({ params }: { params: { id: string } }) {
 
 		const txDetail = await signAndSubmitTransaction(payload);
 
-		toast('Translation Successful', {
-			description: new Date().toUTCString(),
-			action: {
-				label: 'Check in Explorer ',
-				onClick: () => {
-					const hash = txDetail.hash;
-					window.open(
-						`https://explorer.aptoslabs.com/txn/${hash}?network=testnet`,
-						'_blank'
-					); // 在新页面中打开链接
-					// router.push(`https://explorer.aptoslabs.com/txn/${tx}?network=devnet`)
+		if (txDetail != undefined){
+			toast('Translation Successful', {
+				description: new Date().toUTCString(),
+				action: {
+					label: 'Check in Explorer ',
+					onClick: () => {
+						const hash = txDetail.hash;
+						window.open(
+							`https://explorer.aptoslabs.com/txn/${hash}?network=testnet`,
+							'_blank'
+						); // 在新页面中打开链接
+						// router.push(`https://explorer.aptoslabs.com/txn/${tx}?network=devnet`)
+					},
 				},
-			},
-		});
+			});
+		}
 
 		console.log('-------- 1'); // TODO: add transaction hash alert
 		console.log(txDetail);
@@ -124,20 +126,22 @@ export default function Page({ params }: { params: { id: string } }) {
 
 		const txDetail = await signAndSubmitTransaction(payload);
 
-		toast('Translation Successful', {
-			description: new Date().toUTCString(),
-			action: {
-				label: 'Check in Explorer ',
-				onClick: () => {
-					const hash = txDetail.hash;
-					window.open(
-						`https://explorer.aptoslabs.com/txn/${hash}?network=testnet`,
-						'_blank'
-					); // 在新页面中打开链接
-					// router.push(`https://explorer.aptoslabs.com/txn/${tx}?network=devnet`)
+		if (txDetail != undefined){
+			toast('Translation Successful', {
+				description: new Date().toUTCString(),
+				action: {
+					label: 'Check in Explorer ',
+					onClick: () => {
+						const hash = txDetail.hash;
+						window.open(
+							`https://explorer.aptoslabs.com/txn/${hash}?network=testnet`,
+							'_blank'
+						); // 在新页面中打开链接
+						// router.push(`https://explorer.aptoslabs.com/txn/${tx}?network=devnet`)
+					},
 				},
-			},
-		});
+			});
+		}
 
 		console.log('-------- 1'); // TODO: add transaction hash alert
 		console.log(txDetail);
