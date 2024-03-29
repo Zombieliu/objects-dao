@@ -1,0 +1,24 @@
+[package]
+name = "objectsDAO"
+version = "1.0.0"
+authors = []
+
+[dependencies.AptosFramework]
+git = "https://github.com/aptos-labs/aptos-core.git"
+rev = "ff545b7304106141f1ff29d03cf382ebe798a0f5"
+subdir = "aptos-move/framework/aptos-framework"
+
+[dependencies.AptosTokenObjects]
+git = "https://github.com/aptos-labs/aptos-core.git"
+rev = "ff545b7304106141f1ff29d03cf382ebe798a0f5"
+subdir = "aptos-move/framework/aptos-token-objects"
+
+
+# [dependencies]
+# AptosTokenObjects = { local = "../../../aptos-core/aptos-move/framework/aptos-token-objects" }
+# AptosFramework = { local = "../../../aptos-core/aptos-move/framework/aptos-framework" }
+
+[addresses]
+objectsDAO = "_"
+#objectsDAO = "0x0"
+source_address = "0x36cf204b5594508e71cfcf77718cbf64ddeea04c03680c6dacc6e641291a26aa"

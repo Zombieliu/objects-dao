@@ -1,0 +1,11 @@
+import { Network } from '@0xobelisk/aptos-client';
+
+const NETWORK: Network = Network.DEVNET;
+
+const PACKAGE_ID =
+	'0x50f3d59119e56d5a9496759dd86fa58dc8629c4ade3bb6dc3841085f5cc12ba4';
+
+const TREASURE_OBJECT_ADDRESS = '0x50f3d59119e56d5a9496759dd86fa58dc8629c4ade3bb6dc3841085f5cc12ba4::objectsCoin::OBJECT'
+
+const TREASURE_ADDRESS = '0x50f3d59119e56d5a9496759dd86fa58dc8629c4ade3bb6dc3841085f5cc12ba4'
+export { NETWORK, PACKAGE_ID,TREASURE_ADDRESS,TREASURE_OBJECT_ADDRESS };
