@@ -84,9 +84,9 @@ const participate=[
 export const Footer=()=>{
   return(
     <>
-      <div className=''>
+      <div className='max-w-4xl mx-auto p-6'>
         <div className="md:flex justify-between pt-12 items-center">
-          <div className="text-center md:flex justify-between ml-20 mb-10 mt-10 md:mt-0 ">
+          <div className="text-center md:flex justify-between mb-10 mt-10 md:mt-0 ">
             {ends.map(end=>(
               <div key={end.title} className="md:mr-10" >
                 <div className="text-black font-semibold text-base ">
@@ -94,7 +94,6 @@ export const Footer=()=>{
                 </div>
                 {end.content.map(item=>(
                   <div key={item.h1} className="my-3 text-sm transition duration-300 transform hover:translate-x-2 md:text-left text-black">
-
                     <Link legacyBehavior href={item.href}>
                       <a>
                         {item.h1}
@@ -104,7 +103,7 @@ export const Footer=()=>{
               </div>
             ))}
           </div>
-          <div className="mr-20">
+          <div className="">
             <div  className="flex justify-center md:justify-start " >
               <img className="w-18" src="/noggles.svg" alt=""/>
             </div>
