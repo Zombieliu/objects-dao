@@ -19,6 +19,6 @@ subdir = "aptos-move/framework/aptos-token-objects"
 # AptosFramework = { local = "../../../aptos-core/aptos-move/framework/aptos-framework" }
 
 [addresses]
-objectsDAO = "_"
-#objectsDAO = "0x0"
+#objectsDAO = "_"
+objectsDAO = "0x0"
 source_address = "0x36cf204b5594508e71cfcf77718cbf64ddeea04c03680c6dacc6e641291a26aa"
